@@ -3,7 +3,7 @@ import Button from "./Button"
 
 const FormSplitBill = () => {
   return (
-    <form className={`bg-green-300 p-12 text-white`}>
+    <form className={`bg-green-300 p-12 text-white rounded-md`}>
         <h3 className={`text-2xl font-bold`}>Split Bill with X</h3>
         <div className={`my-4 flex flex-row justify-between gap-3 mb-4`}>
         <label>Bill value</label>
@@ -22,7 +22,10 @@ const FormSplitBill = () => {
         <option value={`user`}>You</option>
         <option value={`friend`}>X</option>
       </select>
+      <div>
       <Button className={`mt-6 px-6 py-2 rounded-lg bg-green-500`}>Split Bill</Button>
+      </div>
+      
     </form>
   )
 }
