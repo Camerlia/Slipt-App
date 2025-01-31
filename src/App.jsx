@@ -48,8 +48,8 @@ const App = () => {
         setSelectedFriend(null)
   }
   return (
-    <div className="text center p-16 flex flex-row gap-20 justify-center items-start">
-      <div className={"max-w-80"}>
+    <div className=" p-4 md:p-16 flex flex-col md:flex-row gap-4 md:gap-20 justify-center items-start min-h-screen">
+      <div className="md:max-w-sm w-full">
         <FriendsList
           friends={friends}
           onSelection={handleSelection}
@@ -57,14 +57,16 @@ const App = () => {
         />
         {show && <AddFriendForm onAddFriend={handleNewFriend} />}
         <Button
-          className={`px-6 py-2 mt-6 rounded-lg bg-green-500`}
+          className={`px-6 py-2 mt-6 rounded-lg bg-green-500 w-full md:w-auto`} 
           onClick={handleShow}
         >
           {show ? "Close Form" : "Add Friend"}
         </Button>
       </div>
       {selectedFriend && (
-        <FormSplitBill onSplit={handleSplit} selectedFriend={selectedFriend} />
+        <div className="md:max-w-sm w-full"> 
+          <FormSplitBill onSplit={handleSplit} selectedFriend={selectedFriend} />
+        </div>
       )}
     </div>
   );
